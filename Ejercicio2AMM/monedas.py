@@ -10,3 +10,5 @@ class Libra(Moneda):
 
 class Yen(Moneda):
     pass
+
+#
