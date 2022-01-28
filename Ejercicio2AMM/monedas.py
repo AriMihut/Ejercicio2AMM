@@ -3,12 +3,19 @@ class Moneda:
     cantidad_en_euros = None
 
 class Dolar(Moneda):
-    pass
+
+    def __init__(self, cantidad, cantidad_en_euros):
+        self.cantidad = cantidad
+        self.cantidad_en_euros = cantidad_en_euros
 
 class Libra(Moneda):
-    pass
+    def __init__(self, cantidad, cantidad_en_euros):
+        self.cantidad = cantidad
+        self.cantidad_en_euros = cantidad_en_euros
 
 class Yen(Moneda):
-    pass
+    def __init__(self, cantidad, cantidad_en_euros):
+        self.cantidad = cantidad
+        self.cantidad_en_euros = cantidad_en_euros
 
-#
+

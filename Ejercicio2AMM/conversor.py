@@ -1,6 +1,3 @@
-def pedir_opcion_menu_principal():
-    print('Escoja una opción: ')
-
 def leer_opcion(texto):
     try:
         return int(input(texto))
@@ -18,7 +15,29 @@ CONVERSOR DE MONEDAS
         ''')
 
 
+def pedir_cantidad():
+    print('Indique la cantidad: ')
+
+
+def leer_cantidad():
+    pass
+
+
 if __name__ == '__main__':
-    mostrar_menu_principal()
-    pedir_opcion_menu_principal()
-    opcion_menu_principal = leer_opcion()
+    while True:
+        mostrar_menu_principal()
+        opcion_menu_principal = leer_opcion('Elija una opción: ')
+        if opcion_menu_principal == 1:
+            pedir_cantidad()
+            cantidad = leer_cantidad()
+
+        elif opcion_menu_principal == 2:
+            pedir_cantidad()
+            cantidad = leer_cantidad()
+        elif opcion_menu_principal == 3:
+            pedir_cantidad()
+            cantidad = leer_cantidad()
+        elif opcion_menu_principal == 0:
+            exit(0)
+        else:
+            print('Opción no válida!')
