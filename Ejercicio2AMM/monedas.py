@@ -8,6 +8,8 @@ class Dolar(Moneda):
         self.cantidad = cantidad
         self.cantidad_en_euros = cantidad_en_euros
 
+
+
 class Libra(Moneda):
     def __init__(self, cantidad, cantidad_en_euros):
         self.cantidad = cantidad
