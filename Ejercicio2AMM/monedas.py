@@ -1,17 +1,19 @@
 class Moneda:
     cantidad = None
-    cantidad_en_euros = None
+
+    def cantidad_en_euros(cantidad):
+        pass
 
 class Dolar(Moneda):
 
-    def __init__(self, cantidad, cantidad_en_euros):
+    def __init__(self, cantidad):
         self.cantidad = cantidad
-        self.cantidad_en_euros = cantidad_en_euros
 
-
+    def cantidad_en_euros(cantidad):
+        cantidad * 0,89
 
 class Libra(Moneda):
-    def __init__(self, cantidad, cantidad_en_euros):
+    def __init__(self, cantidad):
         self.cantidad = cantidad
         self.cantidad_en_euros = cantidad_en_euros
 

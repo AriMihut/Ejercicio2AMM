@@ -1,12 +1,10 @@
 from Ejercicio2AMM.Ejercicio2AMM.monedas import Dolar, Libra, Yen
 
-
 def leer_opcion(texto):
     try:
         return int(input(texto))
     except ValueError:
         return None
-
 
 def mostrar_menu_principal():
     print('''
@@ -16,11 +14,8 @@ CONVERSOR DE MONEDAS
 3. Yens
 0. Salir    
         ''')
-
-
 def pedir_cantidad():
     print('Indique la cantidad: ')
-
 
 def leer_cantidad():
     try:
@@ -28,10 +23,10 @@ def leer_cantidad():
     except ValueError:
         return None
 
-
-def mostrar_cantidad_en_euros(cantidad_en_euros):
+def mostrar_cantidad_en_euros(cantidad):
+    if isinstance(cantidad, Dolar):
+    cantidad_en_euros = cantidad * 0,89
     print(f'La cantidad en euros es:  {cantidad_en_euros}')
-
 
 if __name__ == '__main__':
         mostrar_menu_principal()
@@ -41,7 +36,7 @@ if __name__ == '__main__':
             cantidad = leer_cantidad()
             if opcion_menu_principal == 1:
                 dolar = Dolar()
-                mostrar_cantidad_en_euros()
+                mostrar_cantidad_en_euros(cantidad)
             elif opcion_menu_principal == 2:
                 libra = Libra()
             elif opcion_menu_principal == 3:
