@@ -1,4 +1,4 @@
-from Ejercicio2AMM.Ejercicio2AMM.monedas import Dolar, Libra, Yen
+from monedas import Dolar, Libra, Yen
 
 def leer_opcion(texto):
     try:
@@ -23,24 +23,25 @@ def leer_cantidad():
     except ValueError:
         return None
 
-def mostrar_cantidad_en_euros(cantidad):
-    if isinstance(cantidad, Dolar):
-    cantidad_en_euros = cantidad * 0,89
-    print(f'La cantidad en euros es:  {cantidad_en_euros}')
-
 if __name__ == '__main__':
+    while True:
         mostrar_menu_principal()
         opcion_menu_principal = leer_opcion('Elija una opción: ')
-        if  opcion_menu_principal in range(1, 4):
+        if  opcion_menu_principal == 1:
             pedir_cantidad()
-            cantidad = leer_cantidad()
-            if opcion_menu_principal == 1:
-                dolar = Dolar()
-                mostrar_cantidad_en_euros(cantidad)
-            elif opcion_menu_principal == 2:
-                libra = Libra()
-            elif opcion_menu_principal == 3:
-                yen = Yen()
+            cantidadDolar = leer_cantidad()
+            dolar = Dolar(cantidadDolar)
+            print(f'La cantidad en euros es: {dolar.cantidad_en_euros()}')
+        elif opcion_menu_principal == 2:
+            pedir_cantidad()
+            cantidadLibra = leer_cantidad()
+            libra = Libra(cantidadLibra)
+            print(f'La cantidad en euros es: {libra.cantidad_en_euros()}')
+        elif opcion_menu_principal == 3:
+            pedir_cantidad()
+            cantidadYen = leer_cantidad()
+            yen = Yen(cantidadYen)
+            print(f'La cantidad en euros es: {yen.cantidad_en_euros()}')
         elif opcion_menu_principal == 0:
             exit(0)
         else:
